@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Directives</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" title="no title">
+  </head>
+  <body ng-app="my-app">
+
+    <!-- Part 1: Print Hello World -->
+    <hello>There is nothing here</hello>
+
+    <!-- Part 2: Print Hello to Dorothy -->
+    <hello2 subject="Dorothy">How are you?</hello2>
+
+    <!-- Part 3: Print Hello to world if subject not provided -->
+    <hello3></hello3>
+    <hello3 subject="Noah"></hello3>
+    <hello3 subject=""></hello3>
+
+    <!-- Part 4: Make a directive that will generate a bootstrap styled button -->
+    <!-- Part 4A: Default Button -->
+    <bt-button>Default</bt-button>
+
+    <!-- Part 4B: Primary Button -->
+    <bt-button type="primary">Primary</bt-button>
+
+    <!-- Part 4C: Success Button -->
+    <bt-button type="success">Success</bt-button>
+
+    <!-- <form>
+      <div class="form-group">
+        <label>First name</label>
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="form-group">
+        <label>Last name</label>
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="text" class="form-control" placeholder="Email address">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Password">
+      </div>
+      <bt-button type="primary">Submit</bt-button>
+    </form> -->
+
+    <!-- Part 5: Refactor the Form Above-->
+    <form>
+      <form-group type="text" placeholder="First Name"></form-group>
+      <form-group type="text" placeholder="Lam Name"></form-group>
+      <form-group type="text" placeholder="Email Address"></form-group>
+      <form-group type="password" placeholder="Password"></form-group>
+      <bt-button type="primary">Submit</bt-button>
+    </form>
+
+    <!-- Part 6: Toggle a Button -->
+    <toggle-button on-text="Turn off" off-text="Turn on">Toggle Me!</toggle-button>
+
+    <!-- Part 6A: Toggle an Image using a button (2 way Binding to toggle showing an image) -->
+    <!-- Here we have an attribute called 'on' that in our js file we give a boolean value -->
+    <!-- we assign that 'on' value to 'is_show' (can be called anything) -->
+    <toggle-button1 on="is_show" on-text="Show Pic" off-text="Hide Pic">Change Me!</toggle-button1><br>
+    <!-- then here, we bind img to the button -->
+    <!-- ng-show's value is 'is_show'; and takes on that boolean value -->
+    <img ng-show="is_show" src="https://c2.staticflickr.com/4/3114/2608414353_9be4458fae.jpg" alt="" />
+
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="directives.js"></script>
+
+  </body>
+</html>
